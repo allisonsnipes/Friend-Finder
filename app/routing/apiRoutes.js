@@ -1,24 +1,19 @@
-// Dependecies
-var path = require('path')
 // apiRoutes: This routes file renders views for the front end and responds to the client/view requests
 
 // apiRoutes: This routes file returns data to the client/view. Responds to the client/view requests with data
 
+// call on the data needed for api to work
+const neededData = require('../data/friends')
+
 module.exports = function (app) {
   // Get all examples
-  app.get('/api/examples', function (req, res) {
-    Example.findAll()
-      .then(function (dbExamples) {
-        res.json(dbExamples)
-      })
+  app.get('/api/friends', function (req, res) {
+    res.json(surveyData)
   })
 
-  // Create a new example
-  app.post('/api/examples', function (req, res) {
-    Example.create(req.body)
-      .then(function (dbExample) {
-        res.json(dbExample)
-      })
+  // Create entry of results of user
+  app.post('/api/friends', function (req, res) {
+    res.json(surveyData)
   })
 
   // Delete an example by id
