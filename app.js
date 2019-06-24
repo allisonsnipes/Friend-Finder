@@ -2,7 +2,13 @@
 // Packages required to make project run
 // *********************************************************************************
 
-// dependencies
+// Dependencies
+const path = require('path')
 const express = require('express')
 const app = express()
-const path = require('path')
+
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+app.listen(3000)

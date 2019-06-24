@@ -1,32 +1,184 @@
-<!-- What is your idea of a good night out?
-Visit to the theatre or operaRomantic dinner for twoKaraoke at the local pubDrinks and then clubbingWatching a football
-game
+<!DOCTYPE html>
+<html lang="en">
 
-Other Which of these would be your ideal holiday?
-Activity-based, e.g. skiingA luxury hotel in New YorkExploring the Far EastLying on a beach in the sunA cottage in the
-country
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Friend Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- for boostrap css code -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
+  <script src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Survey Questions</h1>
+        <hr>
 
-Other How would you best describe your character?
-Shy and reservedExpressive, open and chattyHumorous, but hide feelingsUncomplicated, easy-goingOther 
+        <fieldset>
+          <form>
+              <h3> About you </h3>
 
-What are the most
-important characteristics in a partner?
-Good looks and styleLoyal, kind, trustworthySense of fun, love of lifeDynamic, successfulPassionate and adventurousOther
+              <div class="form-group">
+                <label for="userName">Name (required)</label>
+                <input type="text" name="usrname" placeholder="Name" required>
 
-How would you describe your parents' marriage?
-Up and down but goodThey separated/divorcedNot close, but stayed togetherHappy, affectionate, lovingAcrimonious,
-argumentative
+                <label for="pic">Link to Photo Image (Required)</label>
+                <input type="text" id="photo" placeholder="upload a photo..." required>
+              </div>
+            <hr>
+          
 
-What were your family's financial circumstances?
-Affluent, plenty for all of usComfortableStruggling, money was tightVaried from lots to little 
+            <div class="form-group">
+              <label for="q1">Question 1: What is your idea of a good night out? </label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Visit to the theatre or opera</option>
+                <option value="2">Romantic dinner for two</option>
+                <option value="3">Karaoke at the local pub</option>
+                <option value="4">Drinks and then clubbing</option>
+                <option value="5">Watching a football</option>
+              </select>
+            </div>
 
-Choose three traits you
-least like in someone
-Messiness Infidelity Unreliability Meanness Selfishness No ambition Poor dress sense Negative attitude/sulkiness Other
+            <div class="form-group">
+              <label for="q2">Question 2: Which of these would be your ideal holiday?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Activity-based (e.g. skiing) </option>
+                <option value="2">Spending time in a luxury hotel</option>
+                <option value="3">Exploring the Far East</option>
+                <option value="4">Lying on a beach somewhere sunny</option>
+                <option value="5">Going to the countryside to a cottage</option>
+              </select>
+            </div>
 
-Do you smoke?
-YesNo
+            <div class="form-group">
+              <label for="q3">Question 3: How would you best describe your character?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Shy and reserved</option>
+                <option value="2">Expressive</option>
+                <option value="3">Open and chatty</option>
+                <option value="4">Humorous, but hide feelings</option>
+                <option value="5">Uncomplicated (e.g. easy-going)</option>
+              </select>
+            </div>
 
-what is your political views
+            <div class="form-group">
+              <label for="q4">Question 4: How would you best describe your character?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Shy and reserved</option>
+                <option value="2">Expressive</option>
+                <option value="3">Open and chatty</option>
+                <option value="4">Humorous, but hide feelings</option>
+                <option value="5">Uncomplicated (e.g. easy-going)</option>
+              </select>
+            </div>
 
-how often do you drink? -->
+            <div class="form-group">
+              <label for="q5">Question 5: What are the most important characteristics in a partner?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Good looks and style</option>
+                <option value="2">Loyal, kind, trustworthiness</option>
+                <option value="3">Sense of fun and/or love of life</option>
+                <option value="4">Dynamic and/or successful</option>
+                <option value="5">Passionate and adventurous</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="q6">Question 6: How would you describe your parents' marriage?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Up and down but good</option>
+                <option value="2">Separated and/or divorced</option>
+                <option value="3">Not close, but stayed together</option>
+                <option value="4">Happy, affectionate, loving</option>
+                <option value="5">Acrimonious and/or argumentative</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="q7">Question 7: What were your family's financial circumstances?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Affluent, plenty for all of us</option>
+                <option value="2">Comfortable</option>
+                <option value="3">Struggling, money was tight</option>
+                <option value="4">Varied from lots to little</option>
+                <option value="5">Hard</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="q8">Question 8: Choose the traits you least like in someone?</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="1">Messiness</option>
+                <option value="2">Infidelity</option>
+                <option value="3">Meanness and/or Selfishness</option>
+                <option value="4">No ambition</option>
+                <option value="5">Negative attitude and/or sulkiness</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="q9">Question 9: Do you smoke, and how often??</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="5">Not a smoker</option>
+                <option value="4">Socially</option>
+                <option value="1">1 pack a week</option>
+                <option value="2">2 - 3 packs a week</option>
+                <option value="3">3 - 4 packs a week</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="q10">Question 10: Do you smoke, and how often??</label>
+              <br>
+              <select class="form-control form-control-sm">
+                <option value="5">Not a smoker</option>
+                <option value="4">Socially</option>
+                <option value="1">1 pack a week</option>
+                <option value="2">2 - 3 packs a week</option>
+                <option value="3">3 - 4 packs a week</option>
+              </select>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <a href="/api/friends"> API Friends List</a> | <a href="github.com/allisonsnipes">Github Repo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!-- boostrap code -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
