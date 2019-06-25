@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/allisonsnipes/Node-Express-Handlebars/issues"
   },
-  "homepage": "https://github.com/allisonsnipes/Node-Express-Handlebars#readme"
+  "homepage": "https://github.com/allisonsnipes/Node-Express-Handlebars#readme",
+  "dependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
