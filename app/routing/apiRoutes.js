@@ -8,7 +8,7 @@ const neededData = require('../data/friends')
 module.exports = function (app) {
   // Get method route
   app.get('/api/friends', function (req, res) {
-    res.json(surveyData)
+    res.json(neededData)
   })
 
   // post method route
