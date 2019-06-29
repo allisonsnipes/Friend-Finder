@@ -43,9 +43,3 @@ module.exports = function (app) {
   app.delete('/api/friends/:id', function (req, res) {
     res.json(surveyData)
   })
-
-  // Render 404 page for any unmatched routes
-  app.get('*', function (req, res) {
-    res.render('404')
-  })
-}
