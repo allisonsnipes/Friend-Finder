@@ -10,9 +10,11 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000 // allows heroku to set up its own port but my localhost will use port 3000
 app.use(express.static('app/public'))
-app.use(express.urlencoded({
-  extended: true
-}))
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+)
 app.use(express.json())
 
 // require routing
