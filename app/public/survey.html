@@ -35,7 +35,7 @@
             <div class="form-group">
               <label for="q1">Question 1: What is your idea of a good night out? </label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q1">
                 <option value="1">Visit to the theatre or opera</option>
                 <option value="2">Romantic dinner for two</option>
                 <option value="3">Karaoke at the local pub</option>
@@ -47,7 +47,7 @@
             <div class="form-group">
               <label for="q2">Question 2: Which of these would be your ideal holiday?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q2">
                 <option value="1">Activity-based (e.g. skiing) </option>
                 <option value="2">Spending time in a luxury hotel</option>
                 <option value="3">Exploring the Far East</option>
@@ -59,7 +59,7 @@
             <div class="form-group">
               <label for="q3">Question 3: How would you best describe your character?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q3">
                 <option value="1">Shy and reserved</option>
                 <option value="2">Expressive</option>
                 <option value="3">Open and chatty</option>
@@ -71,7 +71,7 @@
             <div class="form-group">
               <label for="q4">Question 4: How would you best describe your character?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q4">
                 <option value="1">Shy and reserved</option>
                 <option value="2">Expressive</option>
                 <option value="3">Open and chatty</option>
@@ -83,7 +83,7 @@
             <div class="form-group">
               <label for="q5">Question 5: What are the most important characteristics in a partner?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q5">
                 <option value="1">Good looks and style</option>
                 <option value="2">Loyal, kind, trustworthiness</option>
                 <option value="3">Sense of fun and/or love of life</option>
@@ -95,7 +95,7 @@
             <div class="form-group">
               <label for="q6">Question 6: How would you describe your parents' marriage?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q6">
                 <option value="1">Up and down but good</option>
                 <option value="2">Separated and/or divorced</option>
                 <option value="3">Not close, but stayed together</option>
@@ -107,7 +107,7 @@
             <div class="form-group">
               <label for="q7">Question 7: What were your family's financial circumstances?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q7">
                 <option value="1">Affluent, plenty for all of us</option>
                 <option value="2">Comfortable</option>
                 <option value="3">Struggling, money was tight</option>
@@ -119,7 +119,7 @@
             <div class="form-group">
               <label for="q8">Question 8: Choose the traits you least like in someone?</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q8">
                 <option value="1">Messiness</option>
                 <option value="2">Infidelity</option>
                 <option value="3">Meanness and/or Selfishness</option>
@@ -131,7 +131,7 @@
             <div class="form-group">
               <label for="q9">Question 9: Do you smoke, and how often??</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q9">
                 <option value="5">Not a smoker</option>
                 <option value="4">Socially</option>
                 <option value="1">1 pack a week</option>
@@ -143,7 +143,7 @@
             <div class="form-group">
               <label for="q10">Question 10: Do you smoke, and how often??</label>
               <br>
-              <select class="form-control form-control-sm">
+              <select class="form-control form-control-sm" id="q10">
                 <option value="5">Not a smoker</option>
                 <option value="4">Socially</option>
                 <option value="1">1 pack a week</option>
@@ -152,8 +152,11 @@
               </select>
             </div>
 
+            <div id="results">
+            </div>
+
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
           </form>
         </fieldset>
       </div>
@@ -174,7 +177,51 @@
 
 </footer>
 <!-- boostrap code -->
-<script src="server.js"></script>
+<!-- making request to backend code -->
+<script>
+document.getElementById('submit').onclick = function(e){
+  e.preventDefault();
+  console.log("quiz submited")
+  var q1 = document.getElementById("q1").value
+  var q2 = document.getElementById("q2").value
+  var q3 = document.getElementById("q3").value
+  var q4 = document.getElementById("q4").value
+  var q5 = document.getElementById("q5").value
+  var q6 = document.getElementById("q6").value
+  var q7 = document.getElementById("q7").value
+  var q8 = document.getElementById("q8").value
+  var q9 = document.getElementById("q9").value
+  var q10 = document.getElementById("q10").value
+  console.log(q1)
+  var scores = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
+
+  function saveExample() {
+    return fetch('api/friends', {
+    method: 'POST',
+      headers: {
+	      'Content-Type': 'application/json'
+      },
+     body: JSON.stringify({scores: scores})
+	  })
+    .then(
+      function (response) {
+        response.json()
+        .then(
+          function (data) {
+            console.log(data)
+            let name = data.name
+            let photo = data.photo
+            document.getElementById("results").innerHTML = "<h1>" + name + "</h1>" + "<img src=" + photo + "/>" 
+          }
+        )
+      }
+    )
+  }
+  saveExample()
+}
+
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
